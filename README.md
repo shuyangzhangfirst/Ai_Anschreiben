@@ -1,0 +1,1 @@
+Dieses Projekt dient nur als Hilfe beim Schreiben von Bewerbungen und auch dazu, selbst einen KI-Agenten zu lernen. Es befindet sich noch in der Weiterentwicklung. Außerdem werde ich eine Webanwendung weiterentwickeln.
