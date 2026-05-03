@@ -26,4 +26,4 @@ class ai_anschreiben:
 
 
 
-    
+print("ok")
