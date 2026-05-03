@@ -1,0 +1,36 @@
+{
+    "name": "John Doe",
+    "age": 30,
+    "phone_number": "123-456-7890",
+    "email": "john.doe@example.com",
+    "skills": [
+        {
+            "skill_name": "Python",
+            "skill_level": "Advanced"
+        },
+        {
+            "skill_name": "Data Analysis",
+            "skill_level": "Intermediate"
+        }
+    ],
+    "experiences": {
+        "Data Scientist": {
+            "company_name": "Tech Company",
+            "job_description": "Analyzed data and built machine learning models.",
+            "start_date": "2020-01-01",
+            "end_date": "2022-12-31"
+        }
+    },
+    "education_backgrounds": {
+        "Bachelor's Degree": {
+            "start_date": "2015-09-01",
+            "end_date": "2019-06-30",
+            "school_name": "University of Example",
+            "field_of_study": "Computer Science"
+        }
+    },
+    "hobbies": [
+        "Hiking",
+        "Cooking"
+    ]
+}

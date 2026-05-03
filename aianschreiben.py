@@ -1,29 +1,24 @@
+from Prompt.Template import PromptTemplate
+from LLM.Gemini import LLM
+from OutputFormat.Parser import AnschreibenOutputParser 
 
-from Person import Person
-from Jobinfo import jobinfo
-from langchain_google_genai import ChatGoogleGenerativeAI
 
-from Skills import skill,skills
-from Experience import experience,experiences
-from Education import education,educations
 
-class ai_anschreiben:
-    def __init__(self, person: Person, jobinfo: jobinfo,api_key:str,language:str="Germany"):
-        self.person = person
-        self.jobinfo = jobinfo
-        self.api_key=api_key
-        self.language = language
-    
-    def generate_cover_letter(self):
-        llm = ChatGoogleGenerativeAI(model="gemini-3-flash-preview", temperature=0.7, api_key=self.api_key)
-        prompt = f"Write a cover letter for the following job application with {self.language} language:\n\nJob Title: {self.jobinfo.jobtitle}\nCompany Name: {self.jobinfo.companyname}\nJob Description: {self.jobinfo.jobdescription}\n\nPersonal Information:{self.person.to_string()}"
-        
-        
-        response = llm.invoke(prompt)
-        return response
+pa=PromptTemplate(language="Germany",style="formal")
+pa.load_person_profile("my_profile.json")
+pa.set_target_job(jobtitle="Software Engineer",jobdescription="We are looking for a skilled software engineer to join our team. The ideal candidate should have experience in Python and JavaScript, and be familiar with cloud technologies.",companyname="Tech Company")
+LLM=LLM("your_api_key_here")
+anschreibenparser=AnschreibenOutputParser()
+prompt=pa.generate_prompt()
+
+format=anschreibenparser.get_format_instructions()
+prompt_with_format=prompt + "\n\n" + format
+response=LLM.llm.invoke(prompt_with_format)
+print("Raw LLM Response:", response.content[0]['text']  )
 
 
 
 
 
-print("ok")
+
+
