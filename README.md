@@ -6,12 +6,19 @@ Das Projekt befindet sich aktuell noch in der aktiven Entwicklung, aber die Kern
 
 
 🚀 Aktuelle Funktionen
-Automatische Erstellung von Bewerbungsanschreiben mit KI
-Personalisierte Inhalte basierend auf Benutzerprofil
-Strukturierte Prompt- und Output-Verarbeitung
-HTML-Template-Rendering
-PDF-Generierung
-Vollautomatisierte Pipeline
+
+
+1) Automatische Erstellung von Bewerbungsanschreiben mit KI
+
+2) Personalisierte Inhalte basierend auf Benutzerprofil
+
+3) Strukturierte Prompt- und Output-Verarbeitung
+
+4) HTML-Template-Rendering
+
+5) PDF-Generierung
+
+6) Vollautomatisierte Pipeline
 
 Ein Beispiel für die generierte Ausgabe befindet sich im Repository:
 
@@ -20,37 +27,22 @@ Ein Beispiel für die generierte Ausgabe befindet sich im Repository:
 Diese Datei zeigt die aktuelle Qualität der generierten Ergebnisse.
 
 ⚙️ Verwendung
+
 1️⃣ Gemini API Key einfügen
 
-Öffne die Datei:
+Öffne die Datei:ai anschreiben.py
 
-ai anschreiben.py
+Füge dort deinen Gemini API Key ein: GEMINI_API_KEY = "dein_api_key_hier"
 
-Füge dort deinen Gemini API Key ein:
-
-GEMINI_API_KEY = "dein_api_key_hier"
 2️⃣ Persönliche Informationen konfigurieren
 
 Bearbeite die Datei:
 
 my_profile.json
 
-Trage dort deine persönlichen Daten ein, z. B.:
+In der Datei:ai anschreiben.py
 
-Name
-E-Mail
-Telefonnummer
-Adresse
-Fähigkeiten / Hintergrund
-3️⃣ Zielstelle definieren
-
-In der Datei:
-
-ai anschreiben.py
-
-findest du die Funktion:
-
-set_target_job(...)
+findest du die Funktion:set_target_job(...)
 
 Dort bitte die Informationen zur Zielstelle bzw. zum Unternehmen eintragen.
 
@@ -59,7 +51,6 @@ Dort bitte die Informationen zur Zielstelle bzw. zum Unternehmen eintragen.
 Starte das Projekt mit:
 
 python ai anschreiben.py
-📦 Ausgabe
 
 Nach der Ausführung wird folgende Datei generiert:
 
