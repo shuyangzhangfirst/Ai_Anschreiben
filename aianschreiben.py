@@ -60,7 +60,7 @@ prompt_with_format=prompt + "\n\n" + format
 response=LLM.llm.invoke(prompt_with_format)
 response.content[0]['text']   """
 
-ai=Ai_Anschreiben_Generator("AIzaSyCMj4EESwf-fj7hDbC5le3kQ8jyUgkezSY","Ai_Anschreiben/template.html","anschreiben.pdf")
+ai=Ai_Anschreiben_Generator("your api key","Ai_Anschreiben/template.html","anschreiben.pdf")
 ai.load_person_profile("Ai_Anschreiben/my_profile.json")
 ai.set_target_job(jobtitle="Software Engineer",jobdescription="We are looking for a skilled software engineer to join our team. The ideal candidate should have experience in Python and JavaScript, and be familiar with cloud technologies.",companyname="Tech Company")
 ai.generate_pdf()
