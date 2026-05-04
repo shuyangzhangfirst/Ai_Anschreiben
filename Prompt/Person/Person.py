@@ -8,6 +8,7 @@ class person:
         self.skills:list = None
         self.experiences:dict = None
         self.education_backgrounds:dict = None
+        self.address=None
         
         self.hobbies = None
     
@@ -22,11 +23,12 @@ class person:
         import json
         with open(json_data_path, 'w') as file :
             json.dump(self.__dict__, file, indent=4)
-    def set_personal_info(self,name:str, age:int, phone_number:str=None, email:str=None):
+    def set_personal_info(self,name:str, age:int, phone_number:str=None, email:str=None, address:str=None):
         self.name = name
         self.age = age
         self.phone_number = phone_number
         self.email = email
+        self.address=address
     def add_skill(self,skill_name:str , skill_level:str):
         if self.skills is None:
             self.skills=[]

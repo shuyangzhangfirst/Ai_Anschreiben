@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Anschreiben</title>
+
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 11pt;
+        color: #222;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+    }
+
+    .page {
+        width: 210mm;
+        min-height: 297mm;
+        padding: 25mm;
+        box-sizing: border-box;
+    }
+
+    
+
+    .sender {
+        font-size: 10.5pt;
+    }
+
+    .receiver {
+        font-size: 10.5pt;
+        text-align: right;
+    }
+
+    .date {
+        text-align: left;
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+
+    .subject {
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .content {
+        text-align: justify;
+    }
+
+    .signature {
+        margin-top: 40px;
+    }
+</style>
+
+</head>
+
+<body>
+<div class="page">
+
+    <!-- Header -->
+    <div class="header">
+        <div class="sender">
+            <strong>{{ person_info.name }}</strong><br>
+            {%if person_info.address%}
+            {{ person_info.address }}<br>
+            {%endif%}
+            {%if person_info.email%}
+            {{ person_info.email }}<br>
+            {%endif%}
+            {%if person_info.phone_number%}
+            {{ person_info.phone_number}}
+            {%endif%}
+        </div>
+
+        <div class="receiver">
+            <strong>{{ company_info.company_name }}</strong><br>
+            {%if company_info.contact_person%}
+            {{ company_info.contact_person }}<br>
+            {%endif%}
+            {%if company_info.company_address%}
+            {{ company_info.company_address }}
+            {%endif%}
+        </div>
+    </div>
+
+    <!-- Date -->
+    <div class="date">
+        {{ date }}
+    </div>
+
+    
+
+    <!-- Greeting -->
+    <p>
+    
+    {{greeting}}
+    
+    </p>
+
+    <!-- Content -->
+    <div class="content">
+        {{ content | replace('\n', '<br>') | safe }}
+    </div>
+
+    <!-- Signature -->
+    <div class="signature">
+        <br><br>
+        {{close_phrase}}<br><br>
+        {{person_info.name }}
+    </div>
+
+</div>
+</body>
+</html>
